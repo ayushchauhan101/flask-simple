@@ -1,37 +1,45 @@
-# flask-simple
-Step by step beginner friendly flask projects to learn and understand
+## render template and request handling
 
-### Create a virtual Python environment:
+### Create a simple flask server to send request via pre built template
 
-```
-python3 -m venv my_env
-```
+---
 
-### Start the virtual environment:
+An HTML file named index.html must be added to templates directory
 
-**open the terminal in the same directory**
+> always use templates as the name of the directory to avoid errors
 
-```
-.\my_env\Scripts\activate
-```
+The flask server serches and serves a webpage via index.html using render_template from **flask library.**
 
-### Create a new file named: app.py and copy the codes above
+---
 
-**install Flask**
+Get a request from the url and render via the webpage using request from the **flask library.**
 
-```
-pip install Flask
-```
+### Steps include :
 
-**OR**
+- Enter the following URl or use any name in place of Tom
 
 ```
-pip install -r requirements.txt
+http://localhost:5000/?name=Tom
 ```
 
-### Start the application
+- Add the following code around the placeholder variable:
 
-```py
-py app.py
-python app.py
 ```
+Hello, {{name}}
+```
+
+_this {{}} is the Jinja templating that comes with Flask_
+
+- Run the flask server:
+
+```
+flask run
+```
+
+- You will see result like:
+
+```
+Hello, Tom
+```
+
+_Now the flask server is responding to the user input and serving via HTML template._
