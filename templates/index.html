@@ -1,12 +1,17 @@
-<html lang="en">
-	<head>
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<title>Document</title>
-	</head>
-	<body>
-		Hello, {{name}}
-	</body>
-</html>
+{% extends "layout.html" %} {% block wrapper %}
+
+<form
+	action="/greet"
+	method="get"
+>
+	<input
+		autocomplete="off"
+		autofocus="on"
+		placeholder="please enter a name"
+		type="text"
+		name="name"
+	/>
+	<button type="submit">Greet</button>
+</form>
+
+{% endblock %}

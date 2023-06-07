@@ -1,45 +1,34 @@
 ## render template and request handling
 
-### Create a simple flask server to send request via pre built template
+### Create a Form to take input and render the output via separate html file:
+
+- index.html : Renders the form and takes input
+- greet.html : Renders the output
 
 ---
 
-An HTML file named index.html must be added to templates directory
+### Using block to render the same block of codes wherever called
 
-> always use templates as the name of the directory to avoid errors
-
-The flask server serches and serves a webpage via index.html using render_template from **flask library.**
-
----
-
-Get a request from the url and render via the webpage using request from the **flask library.**
-
-### Steps include :
-
-- Enter the following URl or use any name in place of Tom
+- creates a block of code **layout.html** that will be copied everywhere without the hassle of typing the same HTML tags
 
 ```
-http://localhost:5000/?name=Tom
+{% block wrapper %}
+{% endblock %}
 ```
 
-- Add the following code around the placeholder variable:
+- call wrapper (user given name of block) anywhere to emulate the same html tags again and again
 
 ```
-Hello, {{name}}
+{extends "layout.html"}
+------
+your html tags
+------
+{% block wrapper %}
+{% endblock %}
 ```
 
-_this {{}} is the Jinja templating that comes with Flask_
-
-- Run the flask server:
+_To prevent restarting the app again and again to see the changes:_
 
 ```
-flask run
+flask run --debug
 ```
-
-- You will see result like:
-
-```
-Hello, Tom
-```
-
-_Now the flask server is responding to the user input and serving via HTML template._

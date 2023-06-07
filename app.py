@@ -5,6 +5,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    # catch a key to value name; default = world
-    name = request.args.get("name", "world")
-    return render_template('index.html', name = name)
+    return render_template('index.html')
+
+
+@app.route('/greet')
+def greet():
+    return render_template('greet.html', name=request.args.get('name', 'no one'))
