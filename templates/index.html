@@ -1,14 +1,14 @@
 {% extends "layout.html" %} {% block wrapper %}
 
 <form
-	action="/greet"
-	method="get"
+	action="/"
+	method="post"
 >
 	<input
+		type="text"
 		autocomplete="off"
 		autofocus="on"
-		placeholder="please enter a name"
-		type="text"
+		autocapitalize="on"
 		name="name"
 	/>
 	<button type="submit">Greet</button>
