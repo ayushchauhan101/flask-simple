@@ -6,4 +6,4 @@
 - Pass the created dictionary to the target HTML file.
 - User jinja templating and correct syntax to iterate throught each instance
 
-[Learn more about jinja]('https://jinja.palletsprojects.com/en/3.0.x/templates/')
+[Learn more about jinja](https://jinja.palletsprojects.com/en/3.0.x/templates/)
