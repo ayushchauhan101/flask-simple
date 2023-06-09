@@ -2,10 +2,22 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+all_users = {}
 
-@app.route("/", methods=["GET", "POST"])
+
+@app.route('/')
 def index():
-    if request.method == 'GET':
-        return render_template('index.html')
-    elif request.method == "POST":
-        return render_template('greet.html', name=request.form['name'])
+    return render_template('index.html')
+
+
+@app.route('/register', methods=['POST'])
+def register():
+    name = request.form.get('name')
+    sport = request.form.get('sport')
+    all_users[name] = sport
+    return render_template('success.html')
+
+
+@app.route('/registrants')
+def registrants():
+    return render_template('registrants.html', registrants=all_users)
