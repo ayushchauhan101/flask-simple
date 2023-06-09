@@ -1,34 +1,12 @@
-## render template and request handling
+## Create a form and render the input using POST request:
 
-### Create a Form to take input and render the output via separate html file:
+- Create a form with 'post' method
 
-- index.html : Renders the form and takes input
-- greet.html : Renders the output
+- Mention GET and POST methods in app.py
 
----
+- Request.form to get the form input data using POST request
 
-### Using block to render the same block of codes wherever called
+### Render separate html page depending upon the request methods 
 
-- creates a block of code **layout.html** that will be copied everywhere without the hassle of typing the same HTML tags
-
-```
-{% block wrapper %}
-{% endblock %}
-```
-
-- call wrapper (user given name of block) anywhere to emulate the same html tags again and again
-
-```
-{extends "layout.html"}
-------
-your html tags
-------
-{% block wrapper %}
-{% endblock %}
-```
-
-_To prevent restarting the app again and again to see the changes:_
-
-```
-flask run --debug
-```
+The request methods accepted are 'GET' and 'POST'
+The form is explicitly commanded to send POST request, hence the flask server renders the greet.html page.
