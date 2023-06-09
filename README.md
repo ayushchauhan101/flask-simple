@@ -1,12 +1,9 @@
-## Create a form and render the input using POST request:
+## Create a form and render via jinja template engine:
 
-- Create a form with 'post' method
+- Create a form to accept two data : name & sport
+- Create an empty python dictionary and save each time the form is submitted
 
-- Mention GET and POST methods in app.py
+- Pass the created dictionary to the target HTML file.
+- User jinja templating and correct syntax to iterate throught each instance
 
-- Request.form to get the form input data using POST request
-
-### Render separate html page depending upon the request methods 
-
-The request methods accepted are 'GET' and 'POST'
-The form is explicitly commanded to send POST request, hence the flask server renders the greet.html page.
+[Learn more about jinja]('https://jinja.palletsprojects.com/en/3.0.x/templates/')
